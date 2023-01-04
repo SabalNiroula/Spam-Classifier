@@ -7,7 +7,6 @@ import nltk
 
 ps = PorterStemmer()
 
-
 def transform_text(text):
     text = text.lower()
     text = nltk.word_tokenize(text)
@@ -21,7 +20,6 @@ def transform_text(text):
     stemmer = PorterStemmer()
 
     new_list = []
-
     for i in y:
         if i in stop_word or i in punctuation:
             y.remove(i)
@@ -46,7 +44,6 @@ if st.button('Predict'):
 
     # vectorize
     vectorized_sms = tfidf.transform([sms_preprocess])
-
 
     # predict
     result = model.predict(vectorized_sms)[0]
