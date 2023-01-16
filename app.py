@@ -7,6 +7,7 @@ import nltk
 
 ps = PorterStemmer()
 
+
 def transform_text(text):
     text = text.lower()
     text = nltk.word_tokenize(text)
@@ -30,7 +31,7 @@ def transform_text(text):
     return " ".join(new_list)
 
 
-tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
+tfidf = pickle.load(open('vectorizer.pkl', 'rb'), encoding='latin1')
 model = pickle.load(open('mnb1.pkl', 'rb'))
 
 st.title("Email/SMS spam classifier")
